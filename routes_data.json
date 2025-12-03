@@ -1,0 +1,3379 @@
+{
+  "goal_km": 500,
+  "goal_miles": 312.5,
+  "users": [
+    "John",
+    "Alex",
+    "Karen",
+    "Carol",
+    "Ali"
+  ],
+  "routes": [
+    {
+      "map": "France",
+      "route": "Macaron*",
+      "length_km": "2.6km",
+      "length_miles": "1.6 miles",
+      "elevation": "15m (49')",
+      "lead_in": "0km",
+      "badge_xp": 50.0,
+      "users": {
+        "John": true,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Croissant",
+      "length_km": "9.3km",
+      "length_miles": "5.8 miles",
+      "elevation": "49m (161')",
+      "lead_in": "3.2km (2.0 miles)",
+      "badge_xp": 185.0,
+      "users": {
+        "John": false,
+        "Alex": true,
+        "Karen": true,
+        "Carol": true,
+        "Ali": false
+      },
+      "vote_winner": true
+    },
+    {
+      "map": "France",
+      "route": "Douce France",
+      "length_km": "24km",
+      "length_miles": "14.9 miles",
+      "elevation": "133m (436')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 480.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Casse-Pattes",
+      "length_km": "23km",
+      "length_miles": "14.3 miles",
+      "elevation": "155m (509')",
+      "lead_in": "0.9km (0.6 miles)",
+      "badge_xp": 460.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Hell of the North",
+      "length_km": "19.8km",
+      "length_miles": "12.3 miles",
+      "elevation": "241m (791')",
+      "lead_in": "0km",
+      "badge_xp": 395.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "R.G.V.",
+      "length_km": "24km",
+      "length_miles": "14.9 miles",
+      "elevation": "133m (436')",
+      "lead_in": "0.9km (0.6 miles)",
+      "badge_xp": 480.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Gentil 8",
+      "length_km": "23.1km",
+      "length_miles": "14.4 miles",
+      "elevation": "243m (797')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 465.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Roule Ma Poule",
+      "length_km": "23km",
+      "length_miles": "14.3 miles",
+      "elevation": "155m (509')",
+      "lead_in": "3.1km (1.9 miles)",
+      "badge_xp": 460.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Bon Voyage",
+      "length_km": "28.2km",
+      "length_miles": "17.5 miles",
+      "elevation": "132m (433')",
+      "lead_in": "3.2km (2.0 miles)",
+      "badge_xp": 565.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Petite Douleur",
+      "length_km": "13.9km",
+      "length_miles": "8.6 miles",
+      "elevation": "194m (636')",
+      "lead_in": "10.9km (6.8 miles)",
+      "badge_xp": 280.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Three Musketeers",
+      "length_km": "35.2km",
+      "length_miles": "21.9 miles",
+      "elevation": "195m (640')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 705.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Ven-10",
+      "length_km": "10km",
+      "length_miles": "6.2 miles",
+      "elevation": "781m (2,562')",
+      "lead_in": "1.4km (0.9 miles)",
+      "badge_xp": 200.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Knights of the Roundabout",
+      "length_km": "51.2km",
+      "length_miles": "31.8 miles",
+      "elevation": "336m (1,102')",
+      "lead_in": "3.2km (2.0 miles)",
+      "badge_xp": 1025.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Petit Boucle",
+      "length_km": "60.8km",
+      "length_miles": "37.8 miles",
+      "elevation": "483m (1,585')",
+      "lead_in": "0.9km (0.6 miles)",
+      "badge_xp": 1220.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "La Reine",
+      "length_km": "22.4km",
+      "length_miles": "13.9 miles",
+      "elevation": "1201m (3,940')",
+      "lead_in": "0.4km (0.2 miles)",
+      "badge_xp": 460.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Tire-Bouchon",
+      "length_km": "61km",
+      "length_miles": "37.9 miles",
+      "elevation": "483m (1,585')",
+      "lead_in": "3.1km (1.9 miles)",
+      "badge_xp": 1220.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Sacre Bleu",
+      "length_km": "71.2km",
+      "length_miles": "44.2 miles",
+      "elevation": "396m (1,299')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 1425.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "France",
+      "route": "Ven-Top",
+      "length_km": "20.9km",
+      "length_miles": "13.0 miles",
+      "elevation": "1534m (5,033')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 420.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Innsbruck",
+      "route": "Innsbruckring",
+      "length_km": "8.8km",
+      "length_miles": "5.5 miles",
+      "elevation": "77m (253')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 170.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Innsbruck",
+      "route": "2018 UCI Worlds Course Short",
+      "length_km": "23.6km",
+      "length_miles": "14.7 miles",
+      "elevation": "494m (1,621')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 470.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Innsbruck",
+      "route": "Lutscher CCW",
+      "length_km": "13.8km",
+      "length_miles": "8.6 miles",
+      "elevation": "402m (1,319')",
+      "lead_in": "8.8km (5.5 miles)",
+      "badge_xp": 240.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Innsbruck",
+      "route": "Lutscher",
+      "length_km": "13.7km",
+      "length_miles": "8.5 miles",
+      "elevation": "402m (1,319')",
+      "lead_in": "10.9km (6.8 miles)",
+      "badge_xp": 270.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Innsbruck",
+      "route": "Achterbahn",
+      "length_km": "47.4km",
+      "length_miles": "29.5 miles",
+      "elevation": "989m (3,245')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 950.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Classique",
+      "length_km": "5.5km",
+      "length_miles": "3.4 miles",
+      "elevation": "16m (52')",
+      "lead_in": "5.6km (3.5 miles)",
+      "badge_xp": 110.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "London Flat",
+      "length_km": "11.99km",
+      "length_miles": "7.5 miles",
+      "elevation": "115m (377')",
+      "lead_in": "0.39km (0.2 miles)",
+      "badge_xp": 240.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Classique Reverse*",
+      "length_km": "5.4km",
+      "length_miles": "3.4 miles",
+      "elevation": "25m (82')",
+      "lead_in": "7.6km (4.7 miles)",
+      "badge_xp": 110.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Greater London Flat",
+      "length_km": "11.7km",
+      "length_miles": "7.3 miles",
+      "elevation": "36m (118')",
+      "lead_in": "5.6km (3.5 miles)",
+      "badge_xp": 230.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "London Loop",
+      "length_km": "14.9km",
+      "length_miles": "9.3 miles",
+      "elevation": "231m (758')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 300.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "London 8",
+      "length_km": "20.3km",
+      "length_miles": "12.6 miles",
+      "elevation": "219m (719')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 410.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Greater London Loop",
+      "length_km": "21km",
+      "length_miles": "13.0 miles",
+      "elevation": "222m (728')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 420.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "London Uprising",
+      "length_km": "20.5km",
+      "length_miles": "12.7 miles",
+      "elevation": "356m (1,168')",
+      "lead_in": "0.3km (0.2 miles)",
+      "badge_xp": 420.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Greater London 8",
+      "length_km": "23.8km",
+      "length_miles": "14.8 miles",
+      "elevation": "276m (906')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 480.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Greatest London Loop",
+      "length_km": "25.6km",
+      "length_miles": "15.9 miles",
+      "elevation": "356m (1,168')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 510.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Greatest London Flat",
+      "length_km": "23.6km",
+      "length_miles": "14.7 miles",
+      "elevation": "164m (538')",
+      "lead_in": "7.5km (4.7 miles)",
+      "badge_xp": 500.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Triple Loops",
+      "length_km": "40.9km",
+      "length_miles": "25.4 miles",
+      "elevation": "565m (1,854')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 810.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "The London Pretzel",
+      "length_km": "55.7km",
+      "length_miles": "34.6 miles",
+      "elevation": "475m (1,558')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 1100.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "Surrey Hills",
+      "length_km": "39.2km",
+      "length_miles": "24.4 miles",
+      "elevation": "837m (2,746')",
+      "lead_in": "5.1km (3.2 miles)",
+      "badge_xp": 820.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "The PRL Half",
+      "length_km": "69.1km",
+      "length_miles": "42.9 miles",
+      "elevation": "1009m (3,310')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 1380.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "London",
+      "route": "The PRL Full",
+      "length_km": "173km",
+      "length_miles": "107.5 miles",
+      "elevation": "2621m (8,599')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 3460.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Neokyo Crit Course*",
+      "length_km": "3.9km",
+      "length_miles": "2.4 miles",
+      "elevation": "19m (62')",
+      "lead_in": "0.7km (0.4 miles)",
+      "badge_xp": 90.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Mech Isle Loop",
+      "length_km": "4km",
+      "length_miles": "2.5 miles",
+      "elevation": "39m (128')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 80.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Twilight Harbor",
+      "length_km": "6.9km",
+      "length_miles": "4.3 miles",
+      "elevation": "33m (108')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 135.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Castle Crit",
+      "length_km": "3.5km",
+      "length_miles": "2.2 miles",
+      "elevation": "44m (144')",
+      "lead_in": "1.5km (0.9 miles)",
+      "badge_xp": 69.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Sea to Tree",
+      "length_km": "3.2km",
+      "length_miles": "2.0 miles",
+      "elevation": "106m (348')",
+      "lead_in": "0.6km (0.4 miles)",
+      "badge_xp": 65.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Rooftop Rendezvous",
+      "length_km": "3.7km",
+      "length_miles": "2.3 miles",
+      "elevation": "56m (184')",
+      "lead_in": "2.9km (1.8 miles)",
+      "badge_xp": 74.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Farmland Loop",
+      "length_km": "7.9km",
+      "length_miles": "4.9 miles",
+      "elevation": "58m (190')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 155.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Electric Loop",
+      "length_km": "8.9km",
+      "length_miles": "5.5 miles",
+      "elevation": "43m (141')",
+      "lead_in": "0km",
+      "badge_xp": 170.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Bridges and Boardwalks",
+      "length_km": "6.2km",
+      "length_miles": "3.9 miles",
+      "elevation": "60m (197')",
+      "lead_in": "1.9km (1.2 miles)",
+      "badge_xp": 125.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Valley to Mountaintop",
+      "length_km": "5km",
+      "length_miles": "3.1 miles",
+      "elevation": "129m (423')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 100.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Sleepless City",
+      "length_km": "9.6km",
+      "length_miles": "6.0 miles",
+      "elevation": "43m (141')",
+      "lead_in": "0km",
+      "badge_xp": 185.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Railways and Rooftops",
+      "length_km": "6.2km",
+      "length_miles": "3.9 miles",
+      "elevation": "71m (233')",
+      "lead_in": "2.1km (1.3 miles)",
+      "badge_xp": 120.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Fine and Sandy",
+      "length_km": "10.6km",
+      "length_miles": "6.6 miles",
+      "elevation": "77m (253')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 210.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Island Outskirts",
+      "length_km": "11.4km",
+      "length_miles": "7.1 miles",
+      "elevation": "90m (295')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 225.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Sprinter's Playground",
+      "length_km": "12.4km",
+      "length_miles": "7.7 miles",
+      "elevation": "68m (223')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 245.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Three Village Loop",
+      "length_km": "10.6km",
+      "length_miles": "6.6 miles",
+      "elevation": "93m (305')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 210.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Two Village Loop",
+      "length_km": "12.8km",
+      "length_miles": "8.0 miles",
+      "elevation": "88m (289')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 255.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Flatland Loop",
+      "length_km": "12.9km",
+      "length_miles": "8.0 miles",
+      "elevation": "96m (315')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 260.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Neon Flats",
+      "length_km": "14.7km",
+      "length_miles": "9.1 miles",
+      "elevation": "73m (240')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 290.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Makuri Madness",
+      "length_km": "15.9km",
+      "length_miles": "9.9 miles",
+      "elevation": "85m (279')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 325.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Chain Chomper",
+      "length_km": "13.6km",
+      "length_miles": "8.5 miles",
+      "elevation": "184m (604')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 270.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Countryside Tour",
+      "length_km": "16km",
+      "length_miles": "9.9 miles",
+      "elevation": "185m (607')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 310.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Island Hopper",
+      "length_km": "18km",
+      "length_miles": "11.2 miles",
+      "elevation": "129m (423')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 360.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Spirit Forest",
+      "length_km": "8.4km",
+      "length_miles": "5.2 miles",
+      "elevation": "135m (443')",
+      "lead_in": "4.6km (2.9 miles)",
+      "badge_xp": 170.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Neon After Party",
+      "length_km": "16.15km",
+      "length_miles": "10.0 miles",
+      "elevation": "141m (463')",
+      "lead_in": "1.15km (0.7 miles)",
+      "badge_xp": 340.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Kappa Quest",
+      "length_km": "9.1km",
+      "length_miles": "5.7 miles",
+      "elevation": "140m (459')",
+      "lead_in": "3.8km (2.4 miles)",
+      "badge_xp": 180.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Suki's Playground",
+      "length_km": "18.3km",
+      "length_miles": "11.4 miles",
+      "elevation": "150m (492')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 365.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Kappa Quest Reverse",
+      "length_km": "9km",
+      "length_miles": "5.6 miles",
+      "elevation": "139m (456')",
+      "lead_in": "5.1km (3.2 miles)",
+      "badge_xp": 180.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Castle to Castle",
+      "length_km": "22.4km",
+      "length_miles": "13.9 miles",
+      "elevation": "140m (459')",
+      "lead_in": "0.8km (0.5 miles)",
+      "badge_xp": 460.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Wandering Flats",
+      "length_km": "25.1km",
+      "length_miles": "15.6 miles",
+      "elevation": "146m (479')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 515.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Neokyo All-Nighter",
+      "length_km": "24.3km",
+      "length_miles": "15.1 miles",
+      "elevation": "168m (551')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 485.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Turf N Surf",
+      "length_km": "24.6km",
+      "length_miles": "15.3 miles",
+      "elevation": "196m (643')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 490.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Country to Coastal",
+      "length_km": "33.4km",
+      "length_miles": "20.8 miles",
+      "elevation": "275m (902')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 665.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Temples and Towers",
+      "length_km": "32.6km",
+      "length_miles": "20.3 miles",
+      "elevation": "319m (1,047')",
+      "lead_in": "0.7km (0.4 miles)",
+      "badge_xp": 650.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Chasing the Sun",
+      "length_km": "35.1km",
+      "length_miles": "21.8 miles",
+      "elevation": "316m (1,037')",
+      "lead_in": "0km",
+      "badge_xp": 690.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Makuri 40",
+      "length_km": "40.2km",
+      "length_miles": "25.0 miles",
+      "elevation": "308m (1,010')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 800.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Shisa Shakedown",
+      "length_km": "49.3km",
+      "length_miles": "30.6 miles",
+      "elevation": "495m (1,624')",
+      "lead_in": "4km (2.5 miles)",
+      "badge_xp": 985.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Makuri Islands",
+      "route": "Makuri Pretzel",
+      "length_km": "77.6km",
+      "length_miles": "48.2 miles",
+      "elevation": "616m (2,021')",
+      "lead_in": "1.1km (0.7 miles)",
+      "badge_xp": 1550.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "The 6 Train",
+      "length_km": "6.5km",
+      "length_miles": "4.0 miles",
+      "elevation": "70m (230')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 130.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Gotham Grind",
+      "length_km": "9.3km",
+      "length_miles": "5.8 miles",
+      "elevation": "96m (315')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 190.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Grand Central Circuit",
+      "length_km": "6.8km",
+      "length_miles": "4.2 miles",
+      "elevation": "144m (472')",
+      "lead_in": "1.5km (0.9 miles)",
+      "badge_xp": 140.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Park Perimeter Loop",
+      "length_km": "9.8km",
+      "length_miles": "6.1 miles",
+      "elevation": "126m (413')",
+      "lead_in": "0km",
+      "badge_xp": 190.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Park Perimeter Reverse*",
+      "length_km": "9.8km",
+      "length_miles": "6.1 miles",
+      "elevation": "126m (413')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 195.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Astoria Line 8",
+      "length_km": "11.5km",
+      "length_miles": "7.1 miles",
+      "elevation": "140m (459')",
+      "lead_in": "0km",
+      "badge_xp": 230.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Lady Liberty",
+      "length_km": "12.4km",
+      "length_miles": "7.7 miles",
+      "elevation": "206m (676')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 240.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Mighty Metropolitan",
+      "length_km": "20.1km",
+      "length_miles": "12.5 miles",
+      "elevation": "316m (1,037')",
+      "lead_in": "0km",
+      "badge_xp": 400.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Rising Empire",
+      "length_km": "20.7km",
+      "length_miles": "12.9 miles",
+      "elevation": "375m (1,230')",
+      "lead_in": "0km",
+      "badge_xp": 410.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "LaGuardia After Party",
+      "length_km": "20.8km",
+      "length_miles": "12.9 miles",
+      "elevation": "326m (1,070')",
+      "lead_in": "0km",
+      "badge_xp": 420.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Knickerbocker",
+      "length_km": "22.5km",
+      "length_miles": "14.0 miles",
+      "elevation": "364m (1,194')",
+      "lead_in": "0km",
+      "badge_xp": 450.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Knickerbocker Reverse",
+      "length_km": "22.5km",
+      "length_miles": "14.0 miles",
+      "elevation": "364m (1,194')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 450.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "The Highline",
+      "length_km": "10.5km",
+      "length_miles": "6.5 miles",
+      "elevation": "179m (587')",
+      "lead_in": "9.9km (6.2 miles)",
+      "badge_xp": 210.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "Everything Bagel",
+      "length_km": "34.8km",
+      "length_miles": "21.6 miles",
+      "elevation": "525m (1,722')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 690.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "New York",
+      "route": "NYC KOM After Party",
+      "length_km": "37km",
+      "length_miles": "23.0 miles",
+      "elevation": "480m (1,575')",
+      "lead_in": "0km",
+      "badge_xp": 730.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Paris",
+      "route": "Champs-\u00c9lys\u00e9es",
+      "length_km": "6.6km",
+      "length_miles": "4.1 miles",
+      "elevation": "39m (128')",
+      "lead_in": "3.1km (1.9 miles)",
+      "badge_xp": 130.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Paris",
+      "route": "Lutece Express",
+      "length_km": "6.6km",
+      "length_miles": "4.1 miles",
+      "elevation": "39m (128')",
+      "lead_in": "3.6km (2.2 miles)",
+      "badge_xp": 130.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Richmond",
+      "route": "The Fan Flats",
+      "length_km": "5.1km",
+      "length_miles": "3.2 miles",
+      "elevation": "12m (39')",
+      "lead_in": "4.2km (2.6 miles)",
+      "badge_xp": 100.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Richmond",
+      "route": "Cobbled Climbs",
+      "length_km": "9.2km",
+      "length_miles": "5.7 miles",
+      "elevation": "117m (384')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 180.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Richmond",
+      "route": "Richmond UCI Reverse",
+      "length_km": "16.3km",
+      "length_miles": "10.1 miles",
+      "elevation": "127m (417')",
+      "lead_in": "0km",
+      "badge_xp": 325.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Richmond",
+      "route": "Richmond UCI Worlds",
+      "length_km": "16.3km",
+      "length_miles": "10.1 miles",
+      "elevation": "127m (417')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 320.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Richmond",
+      "route": "Libby Hill After Party",
+      "length_km": "33km",
+      "length_miles": "20.5 miles",
+      "elevation": "102m (335')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 660.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Richmond",
+      "route": "Richmond Loop Around",
+      "length_km": "42.2km",
+      "length_miles": "26.2 miles",
+      "elevation": "555m (1,821')",
+      "lead_in": "0.3km (0.2 miles)",
+      "badge_xp": 850.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Scotland",
+      "route": "Glasgow Crit Circuit",
+      "length_km": "3km",
+      "length_miles": "1.9 miles",
+      "elevation": "34m (112')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 60.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Scotland",
+      "route": "Loch Loop",
+      "length_km": "8km",
+      "length_miles": "5.0 miles",
+      "elevation": "71m (233')",
+      "lead_in": "0km",
+      "badge_xp": 160.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Scotland",
+      "route": "Outer Scotland",
+      "length_km": "11.1km",
+      "length_miles": "6.9 miles",
+      "elevation": "104m (341')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 220.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Scotland",
+      "route": "City and the Sgurr",
+      "length_km": "5.9km",
+      "length_miles": "3.7 miles",
+      "elevation": "103m (338')",
+      "lead_in": "2.7km (1.7 miles)",
+      "badge_xp": 120.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Scotland",
+      "route": "Rolling Highlands",
+      "length_km": "9km",
+      "length_miles": "5.6 miles",
+      "elevation": "77m (253')",
+      "lead_in": "5.1km (3.2 miles)",
+      "badge_xp": 180.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Scotland",
+      "route": "Scotland Smash",
+      "length_km": "17.8km",
+      "length_miles": "11.1 miles",
+      "elevation": "167m (548')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 365.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Scotland",
+      "route": "BRAEk-fast Crits and Grits",
+      "length_km": "20.8km",
+      "length_miles": "12.9 miles",
+      "elevation": "211m (692')",
+      "lead_in": "1.3km (0.8 miles)",
+      "badge_xp": 415.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Scotland",
+      "route": "The Muckle Yin",
+      "length_km": "23.4km",
+      "length_miles": "14.5 miles",
+      "elevation": "282m (925')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 470.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Volcano Circuit",
+      "length_km": "4.1km",
+      "length_miles": "2.5 miles",
+      "elevation": "20m (66')",
+      "lead_in": "2.7km (1.7 miles)",
+      "badge_xp": 80.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Two Bridges Loop",
+      "length_km": "7.1km",
+      "length_miles": "4.4 miles",
+      "elevation": "81m (266')",
+      "lead_in": "0km",
+      "badge_xp": 140.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Temple Trek",
+      "length_km": "6.5km",
+      "length_miles": "4.0 miles",
+      "elevation": "25m (82')",
+      "lead_in": "4.1km (2.5 miles)",
+      "badge_xp": 128.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Volcano Circuit CCW",
+      "length_km": "4.1km",
+      "length_miles": "2.5 miles",
+      "elevation": "20m (66')",
+      "lead_in": "4.8km (3.0 miles)",
+      "badge_xp": 80.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "The Classic",
+      "length_km": "4.7km",
+      "length_miles": "2.9 miles",
+      "elevation": "49m (161')",
+      "lead_in": "4.1km (2.5 miles)",
+      "badge_xp": 100.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Handful of Gravel*",
+      "length_km": "6.1km",
+      "length_miles": "3.8 miles",
+      "elevation": "75m (246')",
+      "lead_in": "4.1km (2.5 miles)",
+      "badge_xp": 125.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Flat Route",
+      "length_km": "10.2km",
+      "length_miles": "6.3 miles",
+      "elevation": "61m (200')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 200.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Hilly Route",
+      "length_km": "9.3km",
+      "length_miles": "5.8 miles",
+      "elevation": "109m (358')",
+      "lead_in": "0km",
+      "badge_xp": 180.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Hilly Route Reverse*",
+      "length_km": "9.3km",
+      "length_miles": "5.8 miles",
+      "elevation": "109m (358')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 180.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Volcano Flat",
+      "length_km": "12.3km",
+      "length_miles": "7.6 miles",
+      "elevation": "50m (164')",
+      "lead_in": "0km",
+      "badge_xp": 240.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Beach Island Loop",
+      "length_km": "13.1km",
+      "length_miles": "8.1 miles",
+      "elevation": "44m (144')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 255.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Jungle Circuit",
+      "length_km": "7.9km",
+      "length_miles": "4.9 miles",
+      "elevation": "82m (269')",
+      "lead_in": "5.7km (3.5 miles)",
+      "badge_xp": 260.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Loop de Loop",
+      "length_km": "12.4km",
+      "length_miles": "7.7 miles",
+      "elevation": "144m (472')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 245.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Oh Hill No",
+      "length_km": "7.9km",
+      "length_miles": "4.9 miles",
+      "elevation": "306m (1,004')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 160.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Mountain Mash",
+      "length_km": "5.7km",
+      "length_miles": "3.5 miles",
+      "elevation": "335m (1,099')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 116.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Tempus Fugit",
+      "length_km": "17.3km",
+      "length_miles": "10.7 miles",
+      "elevation": "16m (52')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 380.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Tick Tock",
+      "length_km": "16.8km",
+      "length_miles": "10.4 miles",
+      "elevation": "53m (174')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 388.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Going Coastal",
+      "length_km": "16.5km",
+      "length_miles": "10.3 miles",
+      "elevation": "63m (207')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 308.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Whole Lotta Lava",
+      "length_km": "12.3km",
+      "length_miles": "7.6 miles",
+      "elevation": "160m (525')",
+      "lead_in": "4.8km (3.0 miles)",
+      "badge_xp": 240.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Ocean Lava Cliffside Loop",
+      "length_km": "19.1km",
+      "length_miles": "11.9 miles",
+      "elevation": "157m (515')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 380.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Loopin Lava",
+      "length_km": "14.3km",
+      "length_miles": "8.9 miles",
+      "elevation": "196m (643')",
+      "lead_in": "4.1km (2.5 miles)",
+      "badge_xp": 285.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Jurassic Coast",
+      "length_km": "19.5km",
+      "length_miles": "12.1 miles",
+      "elevation": "212m (696')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 386.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Mayan San Remo",
+      "length_km": "21km",
+      "length_miles": "13.0 miles",
+      "elevation": "219m (719')",
+      "lead_in": "0.3km (0.2 miles)",
+      "badge_xp": 420.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Hilltop Hustle",
+      "length_km": "13.6km",
+      "length_miles": "8.5 miles",
+      "elevation": "336m (1,102')",
+      "lead_in": "2.7km (1.7 miles)",
+      "badge_xp": 275.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Sand and Sequoias",
+      "length_km": "20.1km",
+      "length_miles": "12.5 miles",
+      "elevation": "175m (574')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 400.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Downtown Eruption",
+      "length_km": "19.4km",
+      "length_miles": "12.1 miles",
+      "elevation": "275m (902')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 400.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Volcano Climb",
+      "length_km": "23.1km",
+      "length_miles": "14.4 miles",
+      "elevation": "203m (666')",
+      "lead_in": "0km",
+      "badge_xp": 460.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Triple Twist",
+      "length_km": "19.8km",
+      "length_miles": "12.3 miles",
+      "elevation": "180m (591')",
+      "lead_in": "4.5km (2.8 miles)",
+      "badge_xp": 400.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Watopia's Waistband",
+      "length_km": "25.4km",
+      "length_miles": "15.8 miles",
+      "elevation": "96m (315')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 555.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Coast to Coast",
+      "length_km": "24.1km",
+      "length_miles": "15.0 miles",
+      "elevation": "154m (505')",
+      "lead_in": "2.6km (1.6 miles)",
+      "badge_xp": 480.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Serpentine 8",
+      "length_km": "19.4km",
+      "length_miles": "12.1 miles",
+      "elevation": "206m (676')",
+      "lead_in": "7.5km (4.7 miles)",
+      "badge_xp": 385.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Coastal Crown Loop",
+      "length_km": "15km",
+      "length_miles": "9.3 miles",
+      "elevation": "185m (607')",
+      "lead_in": "8.6km (5.3 miles)",
+      "badge_xp": 300.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Downtown Titans",
+      "length_km": "24.6km",
+      "length_miles": "15.3 miles",
+      "elevation": "292m (958')",
+      "lead_in": "0km",
+      "badge_xp": 490.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "The Magnificent 8",
+      "length_km": "28.9km",
+      "length_miles": "18.0 miles",
+      "elevation": "156m (512')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 580.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Canopies and Coastlines",
+      "length_km": "22.6km",
+      "length_miles": "14.0 miles",
+      "elevation": "124m (407')",
+      "lead_in": "5.1km (3.2 miles)",
+      "badge_xp": 444.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Big Flat 8",
+      "length_km": "29.2km",
+      "length_miles": "18.1 miles",
+      "elevation": "103m (338')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 580.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Waisted 8",
+      "length_km": "30.7km",
+      "length_miles": "19.1 miles",
+      "elevation": "144m (472')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 615.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Legends and Lava",
+      "length_km": "24.6km",
+      "length_miles": "15.3 miles",
+      "elevation": "352m (1,155')",
+      "lead_in": "0km",
+      "badge_xp": 490.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Figure 8",
+      "length_km": "29.7km",
+      "length_miles": "18.5 miles",
+      "elevation": "254m (833')",
+      "lead_in": "0km",
+      "badge_xp": 580.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Figure 8 Reverse",
+      "length_km": "29.7km",
+      "length_miles": "18.5 miles",
+      "elevation": "254m (833')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 580.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Road to Ruins",
+      "length_km": "29.6km",
+      "length_miles": "18.4 miles",
+      "elevation": "276m (906')",
+      "lead_in": "0km",
+      "badge_xp": 580.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Elevation Evaluation",
+      "length_km": "24.6km",
+      "length_miles": "15.3 miles",
+      "elevation": "396m (1,299')",
+      "lead_in": "3.1km (1.9 miles)",
+      "badge_xp": 490.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Triple Flat Loops",
+      "length_km": "33.9km",
+      "length_miles": "21.1 miles",
+      "elevation": "134m (440')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 680.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Itza Climb Finish",
+      "length_km": "29.1km",
+      "length_miles": "18.1 miles",
+      "elevation": "291m (955')",
+      "lead_in": "0.9km (0.6 miles)",
+      "badge_xp": 600.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Tair Dringfa Fechan",
+      "length_km": "31.5km",
+      "length_miles": "19.6 miles",
+      "elevation": "349m (1,145')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 625.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Danger Noodle",
+      "length_km": "32.1km",
+      "length_miles": "19.9 miles",
+      "elevation": "413m (1,355')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 645.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Sugar Cookie",
+      "length_km": "33.6km",
+      "length_miles": "20.9 miles",
+      "elevation": "251m (823')",
+      "lead_in": "5.6km (3.5 miles)",
+      "badge_xp": 660.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Coast Crusher",
+      "length_km": "34.7km",
+      "length_miles": "21.6 miles",
+      "elevation": "174m (571')",
+      "lead_in": "8.1km (5.0 miles)",
+      "badge_xp": 684.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Mountain Route",
+      "length_km": "29.6km",
+      "length_miles": "18.4 miles",
+      "elevation": "682m (2,238')",
+      "lead_in": "0km",
+      "badge_xp": 580.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Three Little Sisters",
+      "length_km": "37.8km",
+      "length_miles": "23.5 miles",
+      "elevation": "434m (1,424')",
+      "lead_in": "0km",
+      "badge_xp": 755.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Out and Back Again",
+      "length_km": "40.3km",
+      "length_miles": "25.0 miles",
+      "elevation": "329m (1,079')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 840.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Mountain 8",
+      "length_km": "32.1km",
+      "length_miles": "19.9 miles",
+      "elevation": "691m (2,267')",
+      "lead_in": "0km",
+      "badge_xp": 640.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Tides and Temples",
+      "length_km": "36.5km",
+      "length_miles": "22.7 miles",
+      "elevation": "460m (1,509')",
+      "lead_in": "2.6km (1.6 miles)",
+      "badge_xp": 730.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Radio Rendezvous",
+      "length_km": "20.4km",
+      "length_miles": "12.7 miles",
+      "elevation": "728m (2,388')",
+      "lead_in": "3.1km (1.9 miles)",
+      "badge_xp": 410.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Glyph Heights",
+      "length_km": "25.3km",
+      "length_miles": "15.7 miles",
+      "elevation": "537m (1,762')",
+      "lead_in": "8.6km (5.3 miles)",
+      "badge_xp": 510.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Climber's Gambit",
+      "length_km": "27.7km",
+      "length_miles": "17.2 miles",
+      "elevation": "670m (2,198')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 600.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "The Big Ring",
+      "length_km": "48.9km",
+      "length_miles": "30.4 miles",
+      "elevation": "269m (883')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 977.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Mayan Mash",
+      "length_km": "34.6km",
+      "length_miles": "21.5 miles",
+      "elevation": "756m (2,480')",
+      "lead_in": "3.1km (1.9 miles)",
+      "badge_xp": 700.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Snowman",
+      "length_km": "43.9km",
+      "length_miles": "27.3 miles",
+      "elevation": "577m (1,893')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 880.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Big Loop",
+      "length_km": "42.1km",
+      "length_miles": "26.2 miles",
+      "elevation": "661m (2,169')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 840.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Road to Sky",
+      "length_km": "17.3km",
+      "length_miles": "10.7 miles",
+      "elevation": "1045m (3,428')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 380.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Itza Party",
+      "length_km": "45.7km",
+      "length_miles": "28.4 miles",
+      "elevation": "505m (1,657')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 920.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Eastern Eight",
+      "length_km": "51.7km",
+      "length_miles": "32.1 miles",
+      "elevation": "406m (1,332')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 1345.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Deca Dash",
+      "length_km": "48.2km",
+      "length_miles": "30.0 miles",
+      "elevation": "484m (1,588')",
+      "lead_in": "4km (2.5 miles)",
+      "badge_xp": 1000.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Spiral Into the Volcano",
+      "length_km": "55.8km",
+      "length_miles": "34.7 miles",
+      "elevation": "336m (1,102')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 1030.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Muir and the Mountain",
+      "length_km": "33.9km",
+      "length_miles": "21.1 miles",
+      "elevation": "793m (2,602')",
+      "lead_in": "5.1km (3.2 miles)",
+      "badge_xp": 680.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Peak Performance",
+      "length_km": "45.7km",
+      "length_miles": "28.4 miles",
+      "elevation": "726m (2,382')",
+      "lead_in": "0.9km (0.6 miles)",
+      "badge_xp": 920.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Dust In the Wind",
+      "length_km": "52.1km",
+      "length_miles": "32.4 miles",
+      "elevation": "582m (1,909')",
+      "lead_in": "0.3km (0.2 miles)",
+      "badge_xp": 1080.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "ZG25 Queen",
+      "length_km": "44.6km",
+      "length_miles": "27.7 miles",
+      "elevation": "896m (2,940')",
+      "lead_in": "0.2km (0.1 miles)",
+      "badge_xp": 895.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Bigger Loop",
+      "length_km": "52.7km",
+      "length_miles": "32.7 miles",
+      "elevation": "691m (2,267')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 1060.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Shorelines and Summits",
+      "length_km": "46.1km",
+      "length_miles": "28.6 miles",
+      "elevation": "776m (2,546')",
+      "lead_in": "4.1km (2.5 miles)",
+      "badge_xp": 924.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Three Sisters",
+      "length_km": "48km",
+      "length_miles": "29.8 miles",
+      "elevation": "897m (2,943')",
+      "lead_in": "0km",
+      "badge_xp": 950.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Navig8",
+      "length_km": "63.9km",
+      "length_miles": "39.7 miles",
+      "elevation": "417m (1,368')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 1280.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Tour of Fire and Ice",
+      "length_km": "25.3km",
+      "length_miles": "15.7 miles",
+      "elevation": "1167m (3,829')",
+      "lead_in": "2.7km (1.7 miles)",
+      "badge_xp": 500.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Big Foot Hills",
+      "length_km": "67.5km",
+      "length_miles": "41.9 miles",
+      "elevation": "708m (2,323')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 1340.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Accelerate to Elevate",
+      "length_km": "41km",
+      "length_miles": "25.5 miles",
+      "elevation": "1153m (3,783')",
+      "lead_in": "2.3km (1.4 miles)",
+      "badge_xp": 825.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Power to the Tower",
+      "length_km": "43.8km",
+      "length_miles": "27.2 miles",
+      "elevation": "1494m (4,902')",
+      "lead_in": "0.9km (0.6 miles)",
+      "badge_xp": 900.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Zwift Games 2024 Epic",
+      "length_km": "79.6km",
+      "length_miles": "49.5 miles",
+      "elevation": "821m (2,694')",
+      "lead_in": "1.9km (1.2 miles)",
+      "badge_xp": 1594.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "The Pretzel",
+      "length_km": "72.9km",
+      "length_miles": "45.3 miles",
+      "elevation": "1362m (4,469')",
+      "lead_in": "0km",
+      "badge_xp": 1440.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Quatch Quest",
+      "length_km": "46.7km",
+      "length_miles": "29.0 miles",
+      "elevation": "1710m (5,610')",
+      "lead_in": "0km",
+      "badge_xp": 920.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "Four Horsemen",
+      "length_km": "88.7km",
+      "length_miles": "55.1 miles",
+      "elevation": "2113m (6,932')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 1780.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "The Mega Pretzel",
+      "length_km": "107km",
+      "length_miles": "66.5 miles",
+      "elevation": "1640m (5,381')",
+      "lead_in": "3.7km (2.3 miles)",
+      "badge_xp": 2140.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Watopia",
+      "route": "The \u00dcber Pretzel",
+      "length_km": "128.3km",
+      "length_miles": "79.7 miles",
+      "elevation": "2335m (7,661')",
+      "lead_in": "0.5km (0.3 miles)",
+      "badge_xp": 2560.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Yorkshire",
+      "route": "Duchy Estate",
+      "length_km": "3km",
+      "length_miles": "1.9 miles",
+      "elevation": "41m (135')",
+      "lead_in": "1.7km (1.1 miles)",
+      "badge_xp": 60.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Yorkshire",
+      "route": "Queen's Highway",
+      "length_km": "3km",
+      "length_miles": "1.9 miles",
+      "elevation": "40m (131')",
+      "lead_in": "2.6km (1.6 miles)",
+      "badge_xp": 60.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Yorkshire",
+      "route": "Tour of Tewit Well",
+      "length_km": "10.8km",
+      "length_miles": "6.7 miles",
+      "elevation": "204m (669')",
+      "lead_in": "0km",
+      "badge_xp": 210.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Yorkshire",
+      "route": "2019 UCI Worlds Harrogate",
+      "length_km": "13.8km",
+      "length_miles": "8.6 miles",
+      "elevation": "245m (804')",
+      "lead_in": "0.1km (0.1 miles)",
+      "badge_xp": 270.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Yorkshire",
+      "route": "Queen's Highway After Party",
+      "length_km": "17.2km",
+      "length_miles": "10.7 miles",
+      "elevation": "259m (850')",
+      "lead_in": "2.6km (1.6 miles)",
+      "badge_xp": 340.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Yorkshire",
+      "route": "Royal Pump Room 8",
+      "length_km": "27.5km",
+      "length_miles": "17.1 miles",
+      "elevation": "490m (1,608')",
+      "lead_in": "0km",
+      "badge_xp": 550.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    },
+    {
+      "map": "Yorkshire",
+      "route": "Yorkshire Double Loops*",
+      "length_km": "29.6km",
+      "length_miles": "18.4 miles",
+      "elevation": "547m (1,795')",
+      "lead_in": "0km",
+      "badge_xp": 580.0,
+      "users": {
+        "John": false,
+        "Alex": false,
+        "Karen": false,
+        "Carol": false,
+        "Ali": false
+      },
+      "vote_winner": false
+    }
+  ]
+}

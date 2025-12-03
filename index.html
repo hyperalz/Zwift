@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwift Route Tracker - 500km Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-orange: #FC4C02;
+            --accent-blue: #00AEEF;
+            --text-dark: #1A1A1A;
+            --text-light: #FFFFFF;
+            --text-secondary: #666666;
+            --bg-light: #F5F5F5;
+            --bg-white: #FFFFFF;
+            --bg-card: #FAFAFA;
+            --border: #E0E0E0;
+            --success: #4CAF50; /* Keeping green for success, but can change */
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-orange: #FC4C02;
+            --accent-blue: #00AEEF;
+            --text-dark: #E0E0E0;
+            --text-light: #1A1A1A;
+            --text-secondary: #AAAAAA;
+            --bg-light: #1A1A1A;
+            --bg-white: #2C2C2C;
+            --bg-card: #333333;
+            --border: #444444;
+            --success: #66BB6A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-light);
+            padding: 20px;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+        }
+        
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-white);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            color: var(--primary-orange);
+            margin-bottom: 24px;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--text-dark);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .stat-card {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-orange);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-card h3 {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .progress-info {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: var(--border);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        
+        .stat-card .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-orange), #FF7F27);
+            transition: width 0.5s ease-in-out;
+        }
+        
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 24px;
+        }
+        
+        .calendar-section, .routes-section {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .section-header h2 {
+            color: var(--text-dark);
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-filter {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .user-filter-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--border);
+            background: var(--bg-white);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+        
+        .user-filter-btn:hover {
+            background: var(--bg-light);
+            border-color: var(--primary-orange);
+        }
+        
+        .user-filter-btn.active {
+            background: var(--primary-orange);
+            color: var(--text-light);
+            border-color: var(--primary-orange);
+        }
+        
+        .calendar-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .calendar-nav {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .calendar-nav-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--border);
+            background: var(--bg-white);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: var(--transition);
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .calendar-nav-btn:hover {
+            background: var(--bg-light);
+            border-color: var(--primary-orange);
+        }
+        
+        .calendar-month {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .calendar-day-header {
+            background: var(--primary-orange);
+            color: var(--text-light);
+            padding: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        
+        .calendar-day {
+            background: var(--bg-white);
+            min-height: 120px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .calendar-day:hover {
+            background: #FFEDE5; /* Light orange tint */
+        }
+        
+        .calendar-day.selected {
+            background: var(--primary-orange);
+            color: var(--text-light);
+        }
+        
+        .calendar-day.selected .calendar-day-number {
+            color: var(--text-light);
+        }
+        
+        .calendar-day.other-month {
+            background: var(--bg-card);
+            color: #888;
+        }
+        
+        .calendar-day.other-month:hover {
+            background: #E0E0E0;
+        }
+        
+        .calendar-day.today {
+            border: 3px solid var(--accent-blue);
+        }
+        
+        .calendar-day-number {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .calendar-ride {
+            background: var(--accent-blue);
+            color: var(--text-light);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            margin-bottom: 4px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        
+        .selected-date-info {
+            background: #FFEDE5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--primary-orange);
+        }
+        
+        .selected-date-info h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .selected-date-info p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .user-selector {
+            margin-bottom: 20px;
+        }
+        
+        .user-selector label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+        
+        .route-list {
+            max-height: 700px;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+        
+        .route-item {
+            padding: 20px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--bg-white);
+        }
+        
+        .route-item:hover {
+            border-color: var(--primary-orange);
+            background: #FFEDE5;
+            transform: translateY(-2px);
+        }
+        
+        .route-item.selected {
+            border-color: var(--primary-orange);
+            background: #FFEDE5;
+        }
+        
+        .route-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .route-name {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 18px;
+        }
+        
+        .route-map {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .route-details {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        
+        .route-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .cancel-btn {
+            padding: 10px 20px;
+            border: 2px solid #F44336;
+            background: var(--bg-white);
+            color: #F44336;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .cancel-btn:hover {
+            background: #F44336;
+            color: var(--text-light);
+        }
+        
+        .route-item.added-ride {
+            background: #E8F5E9;
+            border-color: var(--success);
+        }
+        
+        #searchInput {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+        
+        #searchInput:focus {
+            border-color: var(--primary-orange);
+            outline: none;
+        }
+        
+        @media (max-width: 1200px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .calendar-day {
+                min-height: 90px;
+                padding: 8px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .section-header h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+    <div class="container">
+        <div class="sticky-header">
+            <h1><i class="fas fa-biking"></i> Zwift Route Tracker - 500km Challenge</h1>
+            
+            <div class="challenge-info" style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #ffc107;">
+                <h2 style="color: #2c3e50; margin-bottom: 10px; font-size: 20px;">📅 Challenge Period</h2>
+                <p style="color: #666; margin-bottom: 8px; font-size: 15px;">
+                    <strong>Start:</strong> December 8, 2025 | <strong>End:</strong> December 23, 2025
+                </p>
+                <p style="color: #666; margin-bottom: 8px; font-size: 15px;">
+                    <strong>Daily Target:</strong> 20 miles per day | <strong>Total Target:</strong> 320 miles (16 days)
+                </p>
+                <p style="color: #856404; font-size: 14px; margin: 0;">
+                    💡 You need to average 20 miles per day to reach the 500km (312.5 miles) goal within the challenge period!
+                </p>
+            </div>
+            
+            <div class="stats" id="userStats"></div>
+        </div>
+        
+        <div class="main-layout">
+            <!-- Calendar Section -->
+            <div class="calendar-section">
+                <div class="section-header">
+                    <h2><i class="far fa-calendar-alt"></i> Calendar</h2>
+                </div>
+                
+                <div class="user-filter" id="userFilter"></div>
+                
+                <div class="calendar-controls">
+                    <div class="calendar-nav">
+                        <button class="calendar-nav-btn" onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i> Previous</button>
+                        <span class="calendar-month" id="calendarMonth"></span>
+                        <button class="calendar-nav-btn" onclick="changeMonth(1)">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <button class="calendar-nav-btn" onclick="goToToday()"><i class="fas fa-calendar-check"></i> Today</button>
+                </div>
+                
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </div>
+            
+            <!-- Routes Section -->
+            <div class="routes-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-route"></i> Routes</h2>
+                </div>
+                
+                <div id="selectedDateInfo" class="selected-date-info" style="display: none;">
+                    <h3 id="selectedDateDisplay">Select a date on the calendar</h3>
+                    <p id="selectedDateSubtext">Click any date to see available routes</p>
+                </div>
+                
+                <div class="user-selector" id="userSelector" style="display: none;">
+                    <label>Who is riding?</label>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;" id="userSelectButtons"></div>
+                </div>
+                
+                <div id="sortControls" style="display: none; margin-bottom: 20px;">
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 15px;">
+                        <div style="flex: 1; min-width: 250px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark); font-size: 14px;">🔍 Search Routes:</label>
+                            <input type="text" id="routeSearch" placeholder="Type route name or map..." oninput="filterRoutes(event)" style="width: 100%; padding: 10px 16px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; background: var(--bg-white); color: var(--text-dark);" autocomplete="off">
+                        </div>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <label style="font-size: 14px; color: var(--text-secondary); font-weight: 500;">Miles:</label>
+                                <select id="sortMiles" onchange="applySort()" style="padding: 8px 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; cursor: pointer; background: var(--bg-white); color: var(--text-dark); min-width: 140px;">
+                                    <option value="">No sort</option>
+                                    <option value="miles-asc">Low to High</option>
+                                    <option value="miles-desc">High to Low</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <label style="font-size: 14px; color: var(--text-secondary); font-weight: 500;">Elevation:</label>
+                                <select id="sortElevation" onchange="applySort()" style="padding: 8px 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; cursor: pointer; background: var(--bg-white); color: var(--text-dark); min-width: 140px;">
+                                    <option value="">No sort</option>
+                                    <option value="elevation-asc">Low to High</option>
+                                    <option value="elevation-desc">High to Low</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <label style="font-size: 14px; color: var(--text-secondary); font-weight: 500;">Map:</label>
+                                <select id="sortMap" onchange="applySort()" style="padding: 8px 12px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; cursor: pointer; background: var(--bg-white); color: var(--text-dark); min-width: 140px;">
+                                    <option value="">No sort</option>
+                                    <option value="map-asc">A to Z</option>
+                                    <option value="map-desc">Z to A</option>
+                                </select>
+                            </div>
+                            <button onclick="clearSort()" style="padding: 8px 16px; border: 2px solid var(--border); background: var(--bg-white); color: var(--text-dark); border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 500; height: fit-content;">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="route-list" id="routeList">
+                    <p style="text-align: center; color: #888; padding: 50px; font-size: 16px;">
+                        Select a date on the calendar to see available routes
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleTheme() {
+            document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
