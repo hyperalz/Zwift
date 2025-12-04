@@ -66,14 +66,17 @@ function initializeApp() {
                 
                 if (saved && routesData) {
                     // Firebase stores arrays as objects - convert if needed
-                    if (saved.routes && !Array.isArray(saved.routes)) {
-                        console.log('🔄 Converting Firebase object to array (real-time)...');
-                        const converted = firebaseObjectToArray(saved.routes);
-                        if (converted) {
-                            saved.routes = converted;
-                        } else {
-                            console.warn('⚠️ Real-time conversion failed, ignoring update');
-                            return;
+                    if (saved.routes) {
+                        if (!Array.isArray(saved.routes)) {
+                            console.log('🔄 Converting Firebase object to array (real-time)...');
+                            const converted = firebaseObjectToArray(saved.routes);
+                            if (converted && Array.isArray(converted)) {
+                                saved.routes = converted;
+                                console.log('✅ Real-time conversion successful');
+                            } else {
+                                console.warn('⚠️ Real-time conversion failed, ignoring update');
+                                return;
+                            }
                         }
                     }
                     
@@ -762,18 +765,29 @@ function loadUserData() {
                 console.log('📦 Firebase data loaded:', saved ? 'data found' : 'no data');
                 
                 if (saved && routesData) {
+                    console.log('🔍 Checking saved.routes:', {
+                        exists: !!saved.routes,
+                        type: typeof saved.routes,
+                        isArray: Array.isArray(saved.routes),
+                        keys: saved.routes ? Object.keys(saved.routes).slice(0, 10) : 'none'
+                    });
+                    
                     // Firebase stores arrays as objects - convert if needed
-                    if (saved.routes && !Array.isArray(saved.routes)) {
-                        console.log('🔄 Converting Firebase object to array...');
-                        console.log('📊 Current routes type:', typeof saved.routes, 'is object:', typeof saved.routes === 'object');
-                        const converted = firebaseObjectToArray(saved.routes);
-                        if (converted) {
-                            saved.routes = converted;
+                    if (saved.routes) {
+                        if (!Array.isArray(saved.routes)) {
+                            console.log('🔄 Converting Firebase object to array...');
+                            const converted = firebaseObjectToArray(saved.routes);
+                            if (converted && Array.isArray(converted)) {
+                                saved.routes = converted;
+                                console.log('✅ Conversion successful, routes is now array with', saved.routes.length, 'items');
+                            } else {
+                                console.error('❌ Conversion failed! Routes structure:', saved.routes);
+                                console.log('ℹ️ Falling back to localStorage...');
+                                loadFromLocalStorage();
+                                return;
+                            }
                         } else {
-                            console.error('❌ Conversion failed! Routes structure:', saved.routes);
-                            console.log('ℹ️ Falling back to localStorage...');
-                            loadFromLocalStorage();
-                            return;
+                            console.log('✅ Routes is already an array');
                         }
                     }
                     
