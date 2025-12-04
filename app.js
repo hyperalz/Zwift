@@ -59,17 +59,28 @@ function initializeApp() {
         
         // If Firebase is enabled, listen for real-time updates from other users
         if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+            console.log('👂 Setting up real-time Firebase listener...');
             database.ref('zwiftUserData').on('value', (snapshot) => {
                 const saved = snapshot.val();
+                console.log('📥 Real-time update received from Firebase:', saved ? 'data received' : 'no data');
+                
                 if (saved && routesData) {
                     // Only apply if data structure is valid
                     if (saved.routes && Array.isArray(saved.routes)) {
+                        console.log('✅ Applying real-time update to calendar...');
                         applyUserData(saved);
+                        console.log('✅ Calendar updated with latest data');
                     } else {
                         console.warn('⚠️ Invalid data structure from Firebase, ignoring update');
                     }
+                } else if (!routesData) {
+                    console.warn('⚠️ routesData not ready yet, skipping update');
                 }
+            }, (error) => {
+                console.error('❌ Firebase listener error:', error);
             });
+        } else {
+            console.log('ℹ️ Firebase not enabled, real-time updates disabled');
         }
     }, 100);
 }
@@ -673,9 +684,10 @@ function saveUserData() {
     // Save to Firebase if enabled (shared across all users)
     if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
         try {
+            console.log('💾 Saving data to Firebase...');
             database.ref('zwiftUserData').set(userData)
                 .then(() => {
-                    console.log('✅ Data saved to Firebase');
+                    console.log('✅ Data saved to Firebase - all users will see this update');
                 })
                 .catch((error) => {
                     console.warn('⚠️ Firebase save failed, using localStorage only:', error);
@@ -683,19 +695,30 @@ function saveUserData() {
         } catch (error) {
             console.warn('⚠️ Firebase error:', error);
         }
+    } else {
+        console.log('💾 Data saved to localStorage only (Firebase not enabled)');
     }
 }
 
 function loadUserData() {
     // Try Firebase first if enabled (shared data)
     if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+        console.log('📥 Loading data from Firebase...');
         database.ref('zwiftUserData').once('value')
             .then((snapshot) => {
                 const saved = snapshot.val();
+                console.log('📦 Firebase data loaded:', saved ? 'data found' : 'no data');
                 if (saved && routesData) {
-                    applyUserData(saved);
+                    if (saved.routes && Array.isArray(saved.routes)) {
+                        console.log('✅ Applying Firebase data to app...');
+                        applyUserData(saved);
+                    } else {
+                        console.warn('⚠️ Invalid Firebase data structure, using localStorage');
+                        loadFromLocalStorage();
+                    }
                 } else {
                     // Fallback to localStorage if Firebase has no data
+                    console.log('ℹ️ No Firebase data, loading from localStorage...');
                     loadFromLocalStorage();
                 }
             })
@@ -705,6 +728,7 @@ function loadUserData() {
             });
     } else {
         // Use localStorage if Firebase not enabled
+        console.log('ℹ️ Firebase not enabled, loading from localStorage...');
         loadFromLocalStorage();
     }
 }
