@@ -976,9 +976,39 @@ function inspectFirebaseData() {
     }
 }
 
+// Function to completely wipe all data (Firebase + localStorage)
+function wipeAllData() {
+    console.log('🗑️ Wiping ALL data (Firebase + localStorage)...');
+    
+    // Clear localStorage
+    localStorage.removeItem('zwiftUserData');
+    console.log('✅ localStorage cleared');
+    
+    // Clear Firebase if enabled
+    if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+        database.ref('zwiftUserData').remove()
+            .then(() => {
+                console.log('✅ Firebase data cleared');
+                console.log('🔄 Reloading page...');
+                alert('All data wiped! The page will reload.');
+                location.reload();
+            })
+            .catch((error) => {
+                console.error('❌ Failed to clear Firebase:', error);
+                alert('LocalStorage cleared, but Firebase clear failed. Reloading anyway...');
+                location.reload();
+            });
+    } else {
+        console.log('ℹ️ Firebase not enabled, only localStorage cleared');
+        alert('All local data cleared! The page will reload.');
+        location.reload();
+    }
+}
+
 // Make functions available globally for console debugging
 window.fixFirebaseData = fixFirebaseData;
 window.inspectFirebaseData = inspectFirebaseData;
+window.wipeAllData = wipeAllData;
 window.clearFirebaseData = function() {
     if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
         if (confirm('Clear all Firebase data? This will remove all shared calendar entries.')) {
