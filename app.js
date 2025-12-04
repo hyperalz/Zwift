@@ -68,7 +68,13 @@ function initializeApp() {
                     // Firebase stores arrays as objects - convert if needed
                     if (saved.routes && !Array.isArray(saved.routes)) {
                         console.log('🔄 Converting Firebase object to array (real-time)...');
-                        saved.routes = firebaseObjectToArray(saved.routes);
+                        const converted = firebaseObjectToArray(saved.routes);
+                        if (converted) {
+                            saved.routes = converted;
+                        } else {
+                            console.warn('⚠️ Real-time conversion failed, ignoring update');
+                            return;
+                        }
                     }
                     
                     // Validate structure before applying - must be array with data
@@ -80,7 +86,8 @@ function initializeApp() {
                         console.warn('⚠️ Invalid data structure from Firebase real-time update, ignoring:', {
                             hasRoutes: !!saved.routes,
                             isArray: Array.isArray(saved.routes),
-                            length: saved.routes ? saved.routes.length : 0
+                            length: saved.routes ? saved.routes.length : 0,
+                            type: typeof saved.routes
                         });
                     }
                 } else if (!routesData) {
@@ -715,17 +722,33 @@ function saveUserData() {
 // Helper function to convert Firebase object to array
 function firebaseObjectToArray(obj) {
     if (Array.isArray(obj)) {
+        console.log('✅ Already an array');
         return obj; // Already an array
     }
     if (obj && typeof obj === 'object') {
         // Firebase stores arrays as objects with numeric keys
         // Convert {0: {...}, 1: {...}} to [{...}, {...}]
-        const keys = Object.keys(obj).sort((a, b) => parseInt(a) - parseInt(b));
+        const keys = Object.keys(obj);
+        console.log('🔍 Converting object with keys:', keys);
+        
+        // Sort keys numerically
+        const sortedKeys = keys.sort((a, b) => {
+            const aNum = parseInt(a);
+            const bNum = parseInt(b);
+            if (isNaN(aNum) || isNaN(bNum)) return 0;
+            return aNum - bNum;
+        });
+        
         // Check if keys are numeric (Firebase array format)
-        if (keys.length > 0 && keys.every(key => /^\d+$/.test(key))) {
-            return keys.map(key => obj[key]);
+        if (sortedKeys.length > 0 && sortedKeys.every(key => /^\d+$/.test(key))) {
+            const result = sortedKeys.map(key => obj[key]);
+            console.log('✅ Converted to array with', result.length, 'items');
+            return result;
+        } else {
+            console.warn('⚠️ Keys are not all numeric:', sortedKeys);
         }
     }
+    console.warn('⚠️ Could not convert to array, returning null');
     return null;
 }
 
@@ -742,7 +765,16 @@ function loadUserData() {
                     // Firebase stores arrays as objects - convert if needed
                     if (saved.routes && !Array.isArray(saved.routes)) {
                         console.log('🔄 Converting Firebase object to array...');
-                        saved.routes = firebaseObjectToArray(saved.routes);
+                        console.log('📊 Current routes type:', typeof saved.routes, 'is object:', typeof saved.routes === 'object');
+                        const converted = firebaseObjectToArray(saved.routes);
+                        if (converted) {
+                            saved.routes = converted;
+                        } else {
+                            console.error('❌ Conversion failed! Routes structure:', saved.routes);
+                            console.log('ℹ️ Falling back to localStorage...');
+                            loadFromLocalStorage();
+                            return;
+                        }
                     }
                     
                     // Validate structure before applying
@@ -753,7 +785,8 @@ function loadUserData() {
                         console.warn('⚠️ Invalid or empty Firebase data structure:', {
                             hasRoutes: !!saved.routes,
                             isArray: Array.isArray(saved.routes),
-                            length: saved.routes ? saved.routes.length : 0
+                            length: saved.routes ? saved.routes.length : 0,
+                            type: typeof saved.routes
                         });
                         console.log('ℹ️ Falling back to localStorage...');
                         loadFromLocalStorage();
@@ -906,5 +939,44 @@ function fixFirebaseData() {
     }
 }
 
-// Make fixFirebaseData available globally for console debugging
+// Function to inspect Firebase data structure
+function inspectFirebaseData() {
+    if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+        database.ref('zwiftUserData').once('value')
+            .then((snapshot) => {
+                const saved = snapshot.val();
+                console.log('📊 Firebase Data Structure:');
+                console.log('Full data:', saved);
+                if (saved && saved.routes) {
+                    console.log('Routes type:', typeof saved.routes);
+                    console.log('Is array:', Array.isArray(saved.routes));
+                    console.log('Routes keys:', saved.routes ? Object.keys(saved.routes) : 'none');
+                    console.log('First few keys:', saved.routes ? Object.keys(saved.routes).slice(0, 5) : 'none');
+                }
+            })
+            .catch((error) => {
+                console.error('❌ Error inspecting Firebase:', error);
+            });
+    } else {
+        console.log('Firebase not enabled');
+    }
+}
+
+// Make functions available globally for console debugging
 window.fixFirebaseData = fixFirebaseData;
+window.inspectFirebaseData = inspectFirebaseData;
+window.clearFirebaseData = function() {
+    if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+        if (confirm('Clear all Firebase data? This will remove all shared calendar entries.')) {
+            database.ref('zwiftUserData').remove()
+                .then(() => {
+                    console.log('✅ Firebase data cleared');
+                    alert('Firebase data cleared. Reload the page.');
+                    location.reload();
+                })
+                .catch((error) => {
+                    console.error('❌ Failed to clear:', error);
+                });
+        }
+    }
+};
