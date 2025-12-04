@@ -65,16 +65,22 @@ function initializeApp() {
                 console.log('📥 Real-time update received from Firebase:', saved ? 'data received' : 'no data');
                 
                 if (saved && routesData) {
-                    // Only apply if data structure is valid
-                    if (saved.routes && Array.isArray(saved.routes)) {
-                        console.log('✅ Applying real-time update to calendar...');
+                    // Validate structure before applying - must be array with data
+                    if (saved.routes && Array.isArray(saved.routes) && saved.routes.length > 0) {
+                        console.log('✅ Valid real-time data, applying update to calendar...');
                         applyUserData(saved);
                         console.log('✅ Calendar updated with latest data');
                     } else {
-                        console.warn('⚠️ Invalid data structure from Firebase, ignoring update');
+                        console.warn('⚠️ Invalid data structure from Firebase real-time update, ignoring:', {
+                            hasRoutes: !!saved.routes,
+                            isArray: Array.isArray(saved.routes),
+                            length: saved.routes ? saved.routes.length : 0
+                        });
                     }
                 } else if (!routesData) {
                     console.warn('⚠️ routesData not ready yet, skipping update');
+                } else {
+                    console.log('ℹ️ No data in real-time update');
                 }
             }, (error) => {
                 console.error('❌ Firebase listener error:', error);
@@ -708,12 +714,19 @@ function loadUserData() {
             .then((snapshot) => {
                 const saved = snapshot.val();
                 console.log('📦 Firebase data loaded:', saved ? 'data found' : 'no data');
+                
                 if (saved && routesData) {
-                    if (saved.routes && Array.isArray(saved.routes)) {
-                        console.log('✅ Applying Firebase data to app...');
+                    // Validate structure before applying
+                    if (saved.routes && Array.isArray(saved.routes) && saved.routes.length > 0) {
+                        console.log('✅ Valid Firebase data structure, applying...');
                         applyUserData(saved);
                     } else {
-                        console.warn('⚠️ Invalid Firebase data structure, using localStorage');
+                        console.warn('⚠️ Invalid or empty Firebase data structure:', {
+                            hasRoutes: !!saved.routes,
+                            isArray: Array.isArray(saved.routes),
+                            length: saved.routes ? saved.routes.length : 0
+                        });
+                        console.log('ℹ️ Falling back to localStorage...');
                         loadFromLocalStorage();
                     }
                 } else {
@@ -746,38 +759,57 @@ function loadFromLocalStorage() {
 }
 
 function applyUserData(userData) {
-    if (!routesData || !userData) {
-        console.warn('⚠️ Cannot apply user data: missing routesData or userData');
+    // Early return with validation
+    if (!routesData) {
+        console.warn('⚠️ Cannot apply user data: routesData not loaded yet');
         return;
     }
     
-    // Validate that routes exists and is an array
-    if (!userData.routes) {
-        console.warn('⚠️ User data has no routes property');
+    if (!userData) {
+        console.warn('⚠️ Cannot apply user data: userData is null/undefined');
+        return;
+    }
+    
+    // Validate that routes exists and is an array - CRITICAL CHECK
+    if (!userData.hasOwnProperty('routes')) {
+        console.warn('⚠️ User data has no routes property, ignoring:', userData);
         return;
     }
     
     if (!Array.isArray(userData.routes)) {
-        console.warn('⚠️ User data routes is not an array:', typeof userData.routes);
+        console.error('❌ User data routes is not an array:', typeof userData.routes, userData.routes);
+        console.warn('⚠️ This might be corrupted Firebase data. Consider clearing Firebase data.');
         return;
     }
     
-    // Apply the data
-    userData.routes.forEach((savedRoute, index) => {
-        if (routesData.routes[index] && savedRoute && savedRoute.users) {
-            Object.keys(savedRoute.users).forEach(user => {
-                // Only accept valid date strings, ignore booleans or invalid data
-                const dateValue = savedRoute.users[user];
-                if (dateValue && typeof dateValue === 'string' && dateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
-                    routesData.routes[index].users[user] = dateValue;
-                } else {
-                    routesData.routes[index].users[user] = null;
-                }
-            });
-        }
-    });
-    renderCalendar();
-    updateStats();
+    // Additional safety check - ensure routes array has expected structure
+    if (userData.routes.length === 0) {
+        console.log('ℹ️ User data has empty routes array, skipping');
+        return;
+    }
+    
+    // Apply the data - now safe to use forEach
+    try {
+        userData.routes.forEach((savedRoute, index) => {
+            if (routesData.routes[index] && savedRoute && savedRoute.users && typeof savedRoute.users === 'object') {
+                Object.keys(savedRoute.users).forEach(user => {
+                    // Only accept valid date strings, ignore booleans or invalid data
+                    const dateValue = savedRoute.users[user];
+                    if (dateValue && typeof dateValue === 'string' && dateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                        routesData.routes[index].users[user] = dateValue;
+                    } else {
+                        routesData.routes[index].users[user] = null;
+                    }
+                });
+            }
+        });
+        renderCalendar();
+        updateStats();
+    } catch (error) {
+        console.error('❌ Error applying user data:', error);
+        console.warn('⚠️ Falling back to localStorage');
+        loadFromLocalStorage();
+    }
 }
 
 // Function to clear all data (localStorage and Firebase)
@@ -787,6 +819,7 @@ function clearAllData() {
         
         // Clear Firebase if enabled
         if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+            console.log('🗑️ Clearing Firebase data...');
             database.ref('zwiftUserData').remove()
                 .then(() => {
                     console.log('✅ Firebase data cleared');
@@ -801,3 +834,48 @@ function clearAllData() {
         }
     }
 }
+
+// Function to fix corrupted Firebase data by re-saving current localStorage data
+function fixFirebaseData() {
+    if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database && routesData) {
+        console.log('🔧 Fixing Firebase data by re-saving from localStorage...');
+        const localData = localStorage.getItem('zwiftUserData');
+        if (localData) {
+            try {
+                const userData = JSON.parse(localData);
+                if (userData.routes && Array.isArray(userData.routes)) {
+                    database.ref('zwiftUserData').set(userData)
+                        .then(() => {
+                            console.log('✅ Firebase data fixed! Reloading page...');
+                            alert('Firebase data has been fixed! The page will reload.');
+                            location.reload();
+                        })
+                        .catch((error) => {
+                            console.error('❌ Failed to fix Firebase data:', error);
+                            alert('Failed to fix Firebase data. Check console for details.');
+                        });
+                } else {
+                    alert('Local data is also corrupted. Please clear all data and start fresh.');
+                }
+            } catch (e) {
+                console.error('❌ Error parsing localStorage data:', e);
+                alert('Error reading local data. Please clear all data and start fresh.');
+            }
+        } else {
+            // No local data, just clear Firebase and start fresh
+            database.ref('zwiftUserData').remove()
+                .then(() => {
+                    console.log('✅ Cleared corrupted Firebase data');
+                    alert('Cleared corrupted Firebase data. You can now add routes and they will sync.');
+                })
+                .catch((error) => {
+                    console.error('❌ Failed to clear Firebase data:', error);
+                });
+        }
+    } else {
+        alert('Firebase is not enabled. This function only works with Firebase.');
+    }
+}
+
+// Make fixFirebaseData available globally for console debugging
+window.fixFirebaseData = fixFirebaseData;
