@@ -62,7 +62,12 @@ function initializeApp() {
             database.ref('zwiftUserData').on('value', (snapshot) => {
                 const saved = snapshot.val();
                 if (saved && routesData) {
-                    applyUserData(saved);
+                    // Only apply if data structure is valid
+                    if (saved.routes && Array.isArray(saved.routes)) {
+                        applyUserData(saved);
+                    } else {
+                        console.warn('⚠️ Invalid data structure from Firebase, ignoring update');
+                    }
                 }
             });
         }
@@ -717,10 +722,25 @@ function loadFromLocalStorage() {
 }
 
 function applyUserData(userData) {
-    if (!routesData || !userData || !userData.routes) return;
+    if (!routesData || !userData) {
+        console.warn('⚠️ Cannot apply user data: missing routesData or userData');
+        return;
+    }
     
+    // Validate that routes exists and is an array
+    if (!userData.routes) {
+        console.warn('⚠️ User data has no routes property');
+        return;
+    }
+    
+    if (!Array.isArray(userData.routes)) {
+        console.warn('⚠️ User data routes is not an array:', typeof userData.routes);
+        return;
+    }
+    
+    // Apply the data
     userData.routes.forEach((savedRoute, index) => {
-        if (routesData.routes[index]) {
+        if (routesData.routes[index] && savedRoute && savedRoute.users) {
             Object.keys(savedRoute.users).forEach(user => {
                 // Only accept valid date strings, ignore booleans or invalid data
                 const dateValue = savedRoute.users[user];
