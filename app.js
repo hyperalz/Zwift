@@ -65,6 +65,12 @@ function initializeApp() {
                 console.log('📥 Real-time update received from Firebase:', saved ? 'data received' : 'no data');
                 
                 if (saved && routesData) {
+                    // Firebase stores arrays as objects - convert if needed
+                    if (saved.routes && !Array.isArray(saved.routes)) {
+                        console.log('🔄 Converting Firebase object to array (real-time)...');
+                        saved.routes = firebaseObjectToArray(saved.routes);
+                    }
+                    
                     // Validate structure before applying - must be array with data
                     if (saved.routes && Array.isArray(saved.routes) && saved.routes.length > 0) {
                         console.log('✅ Valid real-time data, applying update to calendar...');
@@ -706,6 +712,23 @@ function saveUserData() {
     }
 }
 
+// Helper function to convert Firebase object to array
+function firebaseObjectToArray(obj) {
+    if (Array.isArray(obj)) {
+        return obj; // Already an array
+    }
+    if (obj && typeof obj === 'object') {
+        // Firebase stores arrays as objects with numeric keys
+        // Convert {0: {...}, 1: {...}} to [{...}, {...}]
+        const keys = Object.keys(obj).sort((a, b) => parseInt(a) - parseInt(b));
+        // Check if keys are numeric (Firebase array format)
+        if (keys.length > 0 && keys.every(key => /^\d+$/.test(key))) {
+            return keys.map(key => obj[key]);
+        }
+    }
+    return null;
+}
+
 function loadUserData() {
     // Try Firebase first if enabled (shared data)
     if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
@@ -716,6 +739,12 @@ function loadUserData() {
                 console.log('📦 Firebase data loaded:', saved ? 'data found' : 'no data');
                 
                 if (saved && routesData) {
+                    // Firebase stores arrays as objects - convert if needed
+                    if (saved.routes && !Array.isArray(saved.routes)) {
+                        console.log('🔄 Converting Firebase object to array...');
+                        saved.routes = firebaseObjectToArray(saved.routes);
+                    }
+                    
                     // Validate structure before applying
                     if (saved.routes && Array.isArray(saved.routes) && saved.routes.length > 0) {
                         console.log('✅ Valid Firebase data structure, applying...');
