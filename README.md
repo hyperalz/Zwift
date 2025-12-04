@@ -54,7 +54,9 @@ Then follow the prompts to create the repo and enable GitHub Pages.
 
 ## Data Storage
 
-Your progress is automatically saved to browser localStorage, so it persists between sessions. Each user's route assignments are stored separately.
+**Without Firebase (default):** Your progress is saved to browser localStorage, so it persists between sessions but is local to each browser.
+
+**With Firebase (optional):** Enable shared data storage so all users see the same calendar entries. See `FIREBASE_SETUP.md` for setup instructions. The app automatically falls back to localStorage if Firebase isn't configured.
 
 ## Live Demo
 

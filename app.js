@@ -52,7 +52,21 @@ fetch('routes_data.json')
 function initializeApp() {
     setupCalendar();
     updateStats();
-    loadUserData();
+    
+    // Wait a moment for Firebase to initialize, then load data
+    setTimeout(() => {
+        loadUserData();
+        
+        // If Firebase is enabled, listen for real-time updates from other users
+        if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+            database.ref('zwiftUserData').on('value', (snapshot) => {
+                const saved = snapshot.val();
+                if (saved && routesData) {
+                    applyUserData(saved);
+                }
+            });
+        }
+    }, 100);
 }
 
 function setupCalendar() {
@@ -647,39 +661,99 @@ function saveUserData() {
             users: route.users
         }))
     };
+    
+    // Always save to localStorage as backup
     localStorage.setItem('zwiftUserData', JSON.stringify(userData));
+    
+    // Save to Firebase if enabled (shared across all users)
+    if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+        try {
+            database.ref('zwiftUserData').set(userData)
+                .then(() => {
+                    console.log('✅ Data saved to Firebase');
+                })
+                .catch((error) => {
+                    console.warn('⚠️ Firebase save failed, using localStorage only:', error);
+                });
+        } catch (error) {
+            console.warn('⚠️ Firebase error:', error);
+        }
+    }
 }
 
 function loadUserData() {
+    // Try Firebase first if enabled (shared data)
+    if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+        database.ref('zwiftUserData').once('value')
+            .then((snapshot) => {
+                const saved = snapshot.val();
+                if (saved && routesData) {
+                    applyUserData(saved);
+                } else {
+                    // Fallback to localStorage if Firebase has no data
+                    loadFromLocalStorage();
+                }
+            })
+            .catch((error) => {
+                console.warn('⚠️ Firebase load failed, using localStorage:', error);
+                loadFromLocalStorage();
+            });
+    } else {
+        // Use localStorage if Firebase not enabled
+        loadFromLocalStorage();
+    }
+}
+
+function loadFromLocalStorage() {
     const saved = localStorage.getItem('zwiftUserData');
     if (saved && routesData) {
         try {
             const userData = JSON.parse(saved);
-            userData.routes.forEach((savedRoute, index) => {
-                if (routesData.routes[index]) {
-                    Object.keys(savedRoute.users).forEach(user => {
-                        // Only accept valid date strings, ignore booleans or invalid data
-                        const dateValue = savedRoute.users[user];
-                        if (dateValue && typeof dateValue === 'string' && dateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
-                            routesData.routes[index].users[user] = dateValue;
-                        } else {
-                            routesData.routes[index].users[user] = null;
-                        }
-                    });
-                }
-            });
-            renderCalendar();
-            updateStats();
+            applyUserData(userData);
         } catch (e) {
             console.error('Error loading saved data:', e);
         }
     }
 }
 
-// Function to clear localStorage if needed
+function applyUserData(userData) {
+    if (!routesData || !userData || !userData.routes) return;
+    
+    userData.routes.forEach((savedRoute, index) => {
+        if (routesData.routes[index]) {
+            Object.keys(savedRoute.users).forEach(user => {
+                // Only accept valid date strings, ignore booleans or invalid data
+                const dateValue = savedRoute.users[user];
+                if (dateValue && typeof dateValue === 'string' && dateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                    routesData.routes[index].users[user] = dateValue;
+                } else {
+                    routesData.routes[index].users[user] = null;
+                }
+            });
+        }
+    });
+    renderCalendar();
+    updateStats();
+}
+
+// Function to clear all data (localStorage and Firebase)
 function clearAllData() {
     if (confirm('Clear all saved ride data? This cannot be undone.')) {
         localStorage.removeItem('zwiftUserData');
-        location.reload();
+        
+        // Clear Firebase if enabled
+        if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+            database.ref('zwiftUserData').remove()
+                .then(() => {
+                    console.log('✅ Firebase data cleared');
+                    location.reload();
+                })
+                .catch((error) => {
+                    console.warn('⚠️ Firebase clear failed:', error);
+                    location.reload();
+                });
+        } else {
+            location.reload();
+        }
     }
 }
