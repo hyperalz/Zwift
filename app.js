@@ -702,11 +702,37 @@ function updateStats() {
 }
 
 function saveUserData() {
+    // Filter out routes that only have null values (no actual selections)
+    // This prevents saving routes with old/stale data
     const userData = {
-        routes: routesData.routes.map(route => ({
-            users: route.users
-        }))
+        routes: routesData.routes.map((route, index) => {
+            const filteredUsers = {};
+            let hasAnyDate = false;
+            
+            // Only include users that have valid date strings
+            routesData.users.forEach(user => {
+                const dateValue = route.users[user];
+                if (dateValue && typeof dateValue === 'string' && dateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                    filteredUsers[user] = dateValue;
+                    hasAnyDate = true;
+                }
+            });
+            
+            // Log if Macaron* is being saved (for debugging)
+            if (route.route === 'Macaron*' && hasAnyDate) {
+                console.warn('⚠️ WARNING: Macaron* is being saved with dates:', filteredUsers);
+            }
+            
+            // Return users object (even if empty) to maintain array structure
+            return { users: filteredUsers };
+        })
     };
+    
+    // Debug: Log what routes have dates
+    const routesWithDates = userData.routes
+        .map((r, i) => ({ index: i, route: routesData.routes[i].route, users: r.users }))
+        .filter((r, i) => Object.keys(r.users).length > 0);
+    console.log('💾 Saving routes with dates:', routesWithDates.map(r => `${r.route} (${Object.keys(r.users).length} users)`));
     
     // Always save to localStorage as backup
     localStorage.setItem('zwiftUserData', JSON.stringify(userData));
