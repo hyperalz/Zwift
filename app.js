@@ -718,9 +718,12 @@ function saveUserData() {
                 }
             });
             
-            // Log if Macaron* is being saved (for debugging)
+            // CRITICAL: Never save Macaron* (index 0) - it's a bug if it has dates
             if (route.route === 'Macaron*' && hasAnyDate) {
-                console.warn('⚠️ WARNING: Macaron* is being saved with dates:', filteredUsers);
+                console.error('❌ ERROR: Macaron* has dates! This should not happen. Clearing it:', filteredUsers);
+                console.trace('Stack trace to see where Macaron* got a date');
+                // Don't save Macaron* - return empty users object
+                return { users: {} };
             }
             
             // Return users object (even if empty) to maintain array structure
@@ -1015,10 +1018,53 @@ function inspectFirebaseData() {
                     console.log('Is array:', Array.isArray(saved.routes));
                     console.log('Routes keys:', saved.routes ? Object.keys(saved.routes) : 'none');
                     console.log('First few keys:', saved.routes ? Object.keys(saved.routes).slice(0, 5) : 'none');
+                    
+                    // Check specifically for Macaron*
+                    if (Array.isArray(saved.routes) && saved.routes[0] && saved.routes[0].users) {
+                        const macaronUsers = saved.routes[0].users;
+                        const macaronDates = Object.keys(macaronUsers).filter(user => macaronUsers[user]);
+                        if (macaronDates.length > 0) {
+                            console.warn('⚠️ FOUND: Macaron* has dates in Firebase:', macaronUsers);
+                        } else {
+                            console.log('✅ Macaron* has no dates in Firebase');
+                        }
+                    }
                 }
             })
             .catch((error) => {
                 console.error('❌ Error inspecting Firebase:', error);
+            });
+    } else {
+        console.log('Firebase not enabled');
+    }
+}
+
+// Function to specifically remove Macaron* from Firebase
+function removeMacaronFromFirebase() {
+    if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
+        console.log('🔍 Checking Firebase for Macaron*...');
+        database.ref('zwiftUserData').once('value')
+            .then((snapshot) => {
+                const saved = snapshot.val();
+                if (saved && saved.routes && Array.isArray(saved.routes) && saved.routes[0]) {
+                    // Clear Macaron* (index 0) users
+                    saved.routes[0].users = {};
+                    console.log('🧹 Clearing Macaron* from Firebase...');
+                    database.ref('zwiftUserData').set(saved)
+                        .then(() => {
+                            console.log('✅ Macaron* removed from Firebase');
+                            alert('Macaron* removed from Firebase. Reload the page.');
+                            location.reload();
+                        })
+                        .catch((error) => {
+                            console.error('❌ Failed to remove Macaron*:', error);
+                        });
+                } else {
+                    console.log('ℹ️ No Macaron* data found in Firebase');
+                }
+            })
+            .catch((error) => {
+                console.error('❌ Error checking Firebase:', error);
             });
     } else {
         console.log('Firebase not enabled');
@@ -1057,6 +1103,7 @@ function wipeAllData() {
 // Make functions available globally for console debugging
 window.fixFirebaseData = fixFirebaseData;
 window.inspectFirebaseData = inspectFirebaseData;
+window.removeMacaronFromFirebase = removeMacaronFromFirebase;
 window.wipeAllData = wipeAllData;
 window.clearFirebaseData = function() {
     if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
