@@ -11,6 +11,7 @@ let sortElevation = '';
 let sortMap = '';
 let routesToDisplay = [];
 let routeSearchQuery = '';
+let isSaving = false; // Flag to prevent real-time listener from applying our own saves
 
 // Load data from JSON
 fetch('routes_data.json')
@@ -61,6 +62,13 @@ function initializeApp() {
         if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
             console.log('👂 Setting up real-time Firebase listener...');
             database.ref('zwiftUserData').on('value', (snapshot) => {
+                // Ignore updates that come from our own save operation
+                if (isSaving) {
+                    console.log('⏸️ Ignoring real-time update (from our own save)');
+                    isSaving = false; // Reset flag
+                    return;
+                }
+                
                 const saved = snapshot.val();
                 console.log('📥 Real-time update received from Firebase:', saved ? 'data received' : 'no data');
                 
@@ -706,16 +714,24 @@ function saveUserData() {
     // Save to Firebase if enabled (shared across all users)
     if (typeof firebaseEnabled !== 'undefined' && firebaseEnabled && database) {
         try {
+            // Set flag to prevent real-time listener from applying our own save
+            isSaving = true;
             console.log('💾 Saving data to Firebase...');
             database.ref('zwiftUserData').set(userData)
                 .then(() => {
                     console.log('✅ Data saved to Firebase - all users will see this update');
+                    // Reset flag after a short delay to allow save to complete
+                    setTimeout(() => {
+                        isSaving = false;
+                    }, 100);
                 })
                 .catch((error) => {
                     console.warn('⚠️ Firebase save failed, using localStorage only:', error);
+                    isSaving = false; // Reset flag on error
                 });
         } catch (error) {
             console.warn('⚠️ Firebase error:', error);
+            isSaving = false; // Reset flag on error
         }
     } else {
         console.log('💾 Data saved to localStorage only (Firebase not enabled)');
