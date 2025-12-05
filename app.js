@@ -882,6 +882,14 @@ function applyUserData(userData) {
     
     // Apply the data - now safe to use forEach
     try {
+        // First, clear ALL route assignments to start fresh
+        routesData.routes.forEach(route => {
+            routesData.users.forEach(user => {
+                route.users[user] = null;
+            });
+        });
+        
+        // Then, only apply valid date assignments from saved data
         userData.routes.forEach((savedRoute, index) => {
             if (routesData.routes[index] && savedRoute && savedRoute.users && typeof savedRoute.users === 'object') {
                 Object.keys(savedRoute.users).forEach(user => {
@@ -889,9 +897,8 @@ function applyUserData(userData) {
                     const dateValue = savedRoute.users[user];
                     if (dateValue && typeof dateValue === 'string' && dateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
                         routesData.routes[index].users[user] = dateValue;
-                    } else {
-                        routesData.routes[index].users[user] = null;
                     }
+                    // If not valid, leave it as null (already cleared above)
                 });
             }
         });
