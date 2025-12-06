@@ -259,6 +259,7 @@
             border: 1px solid var(--border);
             border-radius: 8px;
             overflow: hidden;
+            min-width: 0; /* Allow grid to shrink */
         }
         
         .calendar-day-header {
@@ -273,10 +274,13 @@
         .calendar-day {
             background: var(--bg-white);
             min-height: 120px;
+            max-height: 180px; /* Limit day height to prevent expansion */
             padding: 10px;
             position: relative;
             cursor: pointer;
             transition: var(--transition);
+            overflow-y: auto; /* Allow scrolling within day if too many rides */
+            min-width: 0; /* Allow day to shrink */
         }
         
         .calendar-day:hover {
