@@ -946,6 +946,11 @@ function applyUserData(userData) {
         // Then, only apply valid date assignments from saved data
         let appliedCount = 0;
         userData.routes.forEach((savedRoute, index) => {
+            // Skip undefined entries (sparse array)
+            if (!savedRoute) {
+                return;
+            }
+            
             // CRITICAL: Never apply Macaron* (index 0) - skip it completely
             if (index === 0 && routesData.routes[0] && routesData.routes[0].route === 'Macaron*') {
                 console.warn('⚠️ Skipping Macaron* (index 0) - should never have dates');
@@ -960,7 +965,7 @@ function applyUserData(userData) {
                     if (dateValue && typeof dateValue === 'string' && dateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
                         routesData.routes[index].users[user] = dateValue;
                         appliedCount++;
-                        console.log(`✅ Applied: ${routeName} for ${user} on ${dateValue}`);
+                        console.log(`✅ Applied: ${routeName} (index ${index}) for ${user} on ${dateValue}`);
                     }
                     // If not valid, leave it as null (already cleared above)
                 });
