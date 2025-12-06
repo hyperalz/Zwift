@@ -785,7 +785,7 @@ function saveUserData() {
     }
 }
 
-// Helper function to convert Firebase object to array
+// Helper function to convert Firebase object to array, preserving original indices
 function firebaseObjectToArray(obj) {
     if (Array.isArray(obj)) {
         console.log('✅ Already an array');
@@ -793,7 +793,7 @@ function firebaseObjectToArray(obj) {
     }
     if (obj && typeof obj === 'object') {
         // Firebase stores arrays as objects with numeric keys
-        // Convert {0: {...}, 1: {...}} to [{...}, {...}]
+        // Convert {0: {...}, 50: {...}} to array preserving indices
         const keys = Object.keys(obj);
         console.log('🔍 Converting object with keys:', keys);
         
@@ -807,8 +807,15 @@ function firebaseObjectToArray(obj) {
         
         // Check if keys are numeric (Firebase array format)
         if (sortedKeys.length > 0 && sortedKeys.every(key => /^\d+$/.test(key))) {
-            const result = sortedKeys.map(key => obj[key]);
-            console.log('✅ Converted to array with', result.length, 'items');
+            // Find the maximum index to create array of correct size
+            const maxIndex = Math.max(...sortedKeys.map(k => parseInt(k)));
+            // Create array preserving original indices (sparse array)
+            const result = new Array(maxIndex + 1);
+            sortedKeys.forEach(key => {
+                const index = parseInt(key);
+                result[index] = obj[key];
+            });
+            console.log('✅ Converted to array with', result.length, 'slots,', sortedKeys.length, 'items');
             return result;
         } else {
             console.warn('⚠️ Keys are not all numeric:', sortedKeys);
