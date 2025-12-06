@@ -24,8 +24,14 @@ fetch('routes_data.json')
     .then(data => {
         routesData = data;
         // Initialize user dates structure - only keep actual date strings, clear booleans
-        routesData.routes.forEach(route => {
+        routesData.routes.forEach((route, index) => {
             routesData.users.forEach(user => {
+                // CRITICAL: Always clear Macaron* (index 0) - it should never have dates
+                if (index === 0 && route.route === 'Macaron*') {
+                    route.users[user] = null;
+                    return;
+                }
+                
                 // If it's a boolean (from Excel checkmarks), set to null
                 // Only keep actual date strings
                 if (typeof route.users[user] === 'boolean') {
@@ -920,6 +926,12 @@ function applyUserData(userData) {
         
         // Then, only apply valid date assignments from saved data
         userData.routes.forEach((savedRoute, index) => {
+            // CRITICAL: Never apply Macaron* (index 0) - skip it completely
+            if (index === 0 && routesData.routes[0] && routesData.routes[0].route === 'Macaron*') {
+                console.warn('⚠️ Skipping Macaron* (index 0) - should never have dates');
+                return; // Skip this route
+            }
+            
             if (routesData.routes[index] && savedRoute && savedRoute.users && typeof savedRoute.users === 'object') {
                 Object.keys(savedRoute.users).forEach(user => {
                     // Only accept valid date strings, ignore booleans or invalid data
