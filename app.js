@@ -96,6 +96,18 @@ function initializeApp() {
                     
                     // Validate structure before applying - must be array with data
                     if (saved.routes && Array.isArray(saved.routes) && saved.routes.length > 0) {
+                        // Debug: Log what routes have dates in the update
+                        const routesWithDates = saved.routes
+                            .map((r, i) => ({ index: i, users: r.users }))
+                            .filter((r, i) => r.users && Object.keys(r.users).length > 0);
+                        console.log('📊 Real-time update contains routes with dates:', routesWithDates.length);
+                        if (routesWithDates.length > 0) {
+                            routesWithDates.forEach(r => {
+                                const routeName = routesData.routes[r.index] ? routesData.routes[r.index].route : 'unknown';
+                                console.log(`  - ${routeName} (index ${r.index}):`, Object.keys(r.users));
+                            });
+                        }
+                        
                         console.log('✅ Valid real-time data, applying update to calendar...');
                         applyUserData(saved);
                         console.log('✅ Calendar updated with latest data');
@@ -925,6 +937,7 @@ function applyUserData(userData) {
         });
         
         // Then, only apply valid date assignments from saved data
+        let appliedCount = 0;
         userData.routes.forEach((savedRoute, index) => {
             // CRITICAL: Never apply Macaron* (index 0) - skip it completely
             if (index === 0 && routesData.routes[0] && routesData.routes[0].route === 'Macaron*') {
@@ -933,16 +946,20 @@ function applyUserData(userData) {
             }
             
             if (routesData.routes[index] && savedRoute && savedRoute.users && typeof savedRoute.users === 'object') {
+                const routeName = routesData.routes[index].route;
                 Object.keys(savedRoute.users).forEach(user => {
                     // Only accept valid date strings, ignore booleans or invalid data
                     const dateValue = savedRoute.users[user];
                     if (dateValue && typeof dateValue === 'string' && dateValue.match(/^\d{4}-\d{2}-\d{2}$/)) {
                         routesData.routes[index].users[user] = dateValue;
+                        appliedCount++;
+                        console.log(`✅ Applied: ${routeName} for ${user} on ${dateValue}`);
                     }
                     // If not valid, leave it as null (already cleared above)
                 });
             }
         });
+        console.log(`📊 Applied ${appliedCount} route assignments from saved data`);
         renderCalendar();
         updateStats();
     } catch (error) {
