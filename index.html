@@ -141,14 +141,32 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-top: 24px;
+            align-items: start;
         }
         
-        .calendar-section, .routes-section {
+        .calendar-section {
             background: var(--bg-card);
             padding: 24px;
             border-radius: 12px;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            min-width: 0; /* Allow shrinking */
+            overflow: visible;
+            max-height: 90vh; /* Prevent calendar from getting too tall */
+            overflow-y: auto; /* Allow scrolling if calendar is too tall */
+        }
+        
+        .routes-section {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            min-width: 450px; /* Prevent routes section from getting too narrow */
+            max-width: 100%;
+            position: sticky;
+            top: 20px; /* Stick to top when scrolling */
+            align-self: start; /* Align to top of grid */
         }
         
         .section-header {
@@ -442,6 +460,15 @@
         @media (max-width: 1200px) {
             .main-layout {
                 grid-template-columns: 1fr;
+            }
+            
+            .routes-section {
+                position: static; /* Remove sticky on smaller screens */
+                min-width: 100%;
+            }
+            
+            .calendar-section {
+                max-height: none; /* Remove max-height on smaller screens */
             }
         }
         
